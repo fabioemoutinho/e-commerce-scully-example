@@ -1,0 +1,29 @@
+<div class="flow-root">
+  <div
+    *ngIf="(loading$ | async) === false"
+    class="group -m-0 lg:-m-2 p-2 flex items-center"
+  >
+    <span class="sr-only">{{ count$ | async }} items in cart, view bag</span>
+    <span class="relative inline-block">
+      <svg
+        class="h-7 w-7 text-gray-900"
+        width="25"
+        height="29"
+        viewBox="0 0 25 29"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M12.5 0.5C8.63423 0.5 5.49998 3.63425 5.49998 7.5V9.25H3.74998C2.85748 9.25 2.1085 9.92028 2.0105 10.8075L0.260503 26.5575C0.206253 27.051 0.363741 27.5462 0.696241 27.9172C1.02874 28.2882 1.50298 28.5 1.99998 28.5H23C23.497 28.5 23.9712 28.2882 24.3037 27.9172C24.6362 27.5462 24.7937 27.051 24.7395 26.5575L22.9895 10.8075C22.8915 9.92028 22.1425 9.25 21.25 9.25H19.5V7.5C19.5 3.63425 16.3657 0.5 12.5 0.5ZM16 9.25V7.5C16 5.56625 14.4337 4 12.5 4C10.5662 4 8.99998 5.56625 8.99998 7.5V9.25H16ZM5.49998 14.5C5.49998 13.534 6.28398 12.75 7.24998 12.75C8.21598 12.75 8.99998 13.534 8.99998 14.5C8.99998 15.466 8.21598 16.25 7.24998 16.25C6.28398 16.25 5.49998 15.466 5.49998 14.5ZM17.75 12.75C16.784 12.75 16 13.534 16 14.5C16 15.466 16.784 16.25 17.75 16.25C18.716 16.25 19.5 15.466 19.5 14.5C19.5 13.534 18.716 12.75 17.75 12.75Z"
+          fill="#111928"
+        />
+      </svg>
+      <span
+        class="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 transform translate-x-1/2 -translate-y-1 bg-red-600 rounded-full"
+        >{{ count$ | async }}</span
+      >
+    </span>
+  </div>
+</div>

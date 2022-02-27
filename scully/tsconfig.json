@@ -1,4 +1,3 @@
-
 {
   "compileOnSave": false,
   "compilerOptions": {
@@ -15,5 +14,6 @@
     "typeRoots": ["../node_modules/@types"],
     "allowSyntheticDefaultImports": true
   },
+  "include": ["../src/environments/environment.prod.ts"],
   "exclude": ["./**/*spec.ts"]
 }

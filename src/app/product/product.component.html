@@ -1,0 +1,65 @@
+<ng-container *ngIf="product$ | async as product">
+  <nav aria-label="Breadcrumb" class="pt-6">
+    <ol
+      role="list"
+      class="max-w-2xl mx-auto px-4 flex items-center space-x-2 sm:px-6 lg:max-w-7xl lg:px-8"
+    >
+      <li
+        class="flex items-center text-xl lg:text-sm font-medium text-gray-900"
+      >
+        <a routerLink="/" class="mr-2 underline">HOME</a>
+        &gt;
+      </li>
+
+      <li
+        class="flex items-center text-xl lg:text-sm font-medium text-gray-900"
+      >
+        <a
+          [routerLink]="'/product/' + product.id"
+          aria-current="page"
+          class="underline"
+        >
+          {{ product.title }}
+        </a>
+      </li>
+    </ol>
+  </nav>
+
+  <!-- Product info -->
+  <div
+    class="max-w-2xl mx-auto pt-10 pb-16 px-4 sm:px-6 lg:max-w-7xl lg:pt-16 lg:pb-24 lg:px-8 lg:grid lg:grid-cols-2 lg:grid-rows-[auto,auto] lg:gap-x-8"
+  >
+    <div class="lg:col-span-1 lg:pr-8">
+      <picture
+        class="w-full h-full object-center object-cover lg:w-full lg:h-full"
+      >
+        <img [src]="product.image" [alt]="product.description" />
+      </picture>
+    </div>
+
+    <div class="mt-4 lg:mt-0 lg:row-span-3">
+      <h2 class="sr-only">Product information</h2>
+
+      <div
+        class="w-full min-h-70 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-70 lg:aspect-none"
+      ></div>
+
+      <h2 class="text-4xl">{{ product.title }}</h2>
+
+      <p class="space-y-4 text-base text-gray-900">{{ product.description }}</p>
+
+      <p *ngIf="product.price" class="text-3xl font-medium text-gray-900 mt-10">
+        {{ product.price | currency }}
+      </p>
+
+      <button
+        *ngIf="product.id"
+        type="submit"
+        class="mt-10 w-full rounded-md py-3 px-8 text-2xl lg:text-xl font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+        (click)="addToCart(product.id)"
+      >
+        Add to Cart
+      </button>
+    </div>
+  </div>
+</ng-container>

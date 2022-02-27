@@ -45,9 +45,13 @@ testem.log
 .DS_Store
 Thumbs.db
 
+# Scully
 scully.log
 scullyStats.json
 .scully
 /scully/**/*.js
 /scully/**/*.js.map
 /scully/**/*.d.ts
+/src/assets/scully-routes.json
+/src/environments/*.js
+/src/environments/*.js.map

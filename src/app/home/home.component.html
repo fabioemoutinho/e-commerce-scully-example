@@ -1,0 +1,51 @@
+<nav aria-label="Breadcrumb" class="pt-6">
+  <ol
+    role="list"
+    class="max-w-2xl mx-auto px-4 flex items-center space-x-2 sm:px-6 lg:max-w-7xl lg:px-8"
+  >
+    <li class="flex items-center text-xl lg:text-sm font-medium text-gray-900">
+      <a routerLink="/" class="mr-2 underline">HOME</a>
+    </li>
+  </ol>
+</nav>
+
+<div
+  class="max-w-2xl mx-auto pt-10 pb-16 px-4 sm:pb-24 sm:px-6 lg:max-w-7xl lg:px-8"
+>
+  <nav>
+    <ul
+      class="mt-6 grid grid-cols-1 px-4 sm:px-0 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8"
+    >
+      <li *ngFor="let product of products$ | async">
+        <a
+          [routerLink]="'/product/' + product.id"
+          class="block relative m-auto w-full hover:opacity-75"
+        >
+          <p
+            *ngIf="product.price"
+            class="price-badge py-2 px-4 text-md font-medium leading-3 text-white absolute top-2 right-2 rounded-md"
+          >
+            {{ product.price | currency }}
+          </p>
+          <div
+            class="absolute bottom-0 left-0 px-2 flex items-center product-name w-full h-14"
+          >
+            <p class="text-lg text-white leading-none">
+              {{ product.title }}
+            </p>
+          </div>
+          <picture>
+            <img
+              [src]="product.image"
+              [alt]="product.title"
+              class="not-loaded w-full"
+              (load)="onLoadImage($event)"
+              (error)="onErrorImage($event)"
+            />
+          </picture>
+        </a>
+        <p class="hidden lg:block py-2">{{ product.description }}</p>
+      </li>
+    </ul>
+  </nav>
+</div>
