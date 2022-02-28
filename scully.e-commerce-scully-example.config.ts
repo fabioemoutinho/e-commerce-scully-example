@@ -8,6 +8,9 @@ import { environment } from './src/environments/environment.prod';
 export const config: ScullyConfig = {
   projectRoot: './src',
   projectName: 'e-commerce-scully-example',
+  puppeteerLaunchOptions: {
+    args: ['--no-sandbox'],
+  },
   // add spsModulePath when using de Scully Platform Server,
   outDir: './dist/static',
   routes: {
