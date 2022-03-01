@@ -34,11 +34,11 @@
               {{ product.title }}
             </p>
           </div>
-          <picture>
+          <picture class="picture block relative overflow-hidden">
             <img
               [src]="product.image"
               [alt]="product.title"
-              class="not-loaded w-full"
+              class="img not-loaded object-contain w-full h-full absolute top-0 left-0"
               (load)="onLoadImage($event)"
               (error)="onErrorImage($event)"
             />
