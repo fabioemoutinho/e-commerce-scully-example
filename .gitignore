@@ -53,5 +53,5 @@ scullyStats.json
 /scully/**/*.js.map
 /scully/**/*.d.ts
 /src/assets/scully-routes.json
-/src/environments/*.js
-/src/environments/*.js.map
+/src/**/*.js
+/src/**/*.js.map
