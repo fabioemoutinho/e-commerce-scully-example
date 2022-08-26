@@ -33,7 +33,12 @@
       <picture
         class="w-full h-full object-center object-cover lg:w-full lg:h-full"
       >
-        <img [src]="product.image" [alt]="product.description" />
+        <img
+          [rawSrc]="product.id + '.jpg'"
+          [alt]="product.description"
+          width="500"
+          height="500"
+        />
       </picture>
     </div>
 

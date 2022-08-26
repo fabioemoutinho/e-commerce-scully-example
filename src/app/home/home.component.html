@@ -36,11 +36,13 @@
           </div>
           <picture class="picture block relative overflow-hidden">
             <img
-              [src]="product.image"
+              [rawSrc]="product.id + '.jpg'"
               [alt]="product.title"
               class="img not-loaded object-contain w-full h-full absolute top-0 left-0"
               (load)="onLoadImage($event)"
               (error)="onErrorImage($event)"
+              width="200"
+              height="200"
             />
           </picture>
         </a>
